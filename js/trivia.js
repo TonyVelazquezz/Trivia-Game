@@ -116,6 +116,7 @@ getNewQuestion = () => {
 		answer.innerText = currentQuestion[`answer${number}`];
 	});
 
+	availableQuestion.splice(questionIndex, 1);
 	acceptAnswers = true;
 };
 
