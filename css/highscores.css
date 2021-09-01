@@ -1,0 +1,63 @@
+.scores {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 100vh;
+}
+.scores .scores-text {
+	font-size: 3rem;
+	text-transform: capitalize;
+	margin-bottom: 5rem;
+	line-height: 3rem;
+}
+.scores .scores-list {
+	list-style: none;
+	margin-bottom: 10rem;
+	text-align: center;
+	padding: 0;
+}
+.scores .scores-list .high-score {
+	display: flex;
+	justify-content: space-between;
+	gap: 3rem;
+	margin-bottom: 2rem;
+	transition: all 0.3s ease;
+}
+.scores .scores-list .high-score:hover {
+	transform: scale(1.1);
+}
+.scores .scores-list .high-score .score-name {
+	font-size: 2.5rem;
+	font-weight: 500;
+}
+.scores .scores-list .high-score .score-number {
+	font-size: 2.5rem;
+	font-weight: 600;
+	color: var(--secondary);
+}
+.scores .scores-btn {
+	max-width: 20rem;
+	background-color: var(--secondary);
+	padding: 1rem;
+	border: none;
+	font-family: var(--mainFont);
+	font-size: 2rem;
+	border-radius: 0.3rem;
+	font-weight: 500;
+	color: var(--primaryDark);
+	transition: all 0.4s ease;
+	text-transform: capitalize;
+	text-align: center;
+	font-weight: 500;
+}
+.scores .scores-btn i {
+	margin-bottom: 1rem;
+	display: block;
+}
+.scores .scores-btn:hover {
+	background-color: var(--secondaryDark);
+	color: var(--white);
+	cursor: pointer;
+	transform: scale(1.15);
+}

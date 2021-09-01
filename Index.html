@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Home Trivia</title>
+		<link rel="stylesheet" href="./css/normalize.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/f9f2f14343.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/responsive.css" />
+	</head>
+	<body>
+		<div class="header container">
+			<h1 class="header-title">Trivia Game</h1>
+
+			<div class="header-instructions">select the options below to play!</div>
+
+			<a class="btn-highscore" href="./high-score.html"
+				><i class="fas fa-trophy"></i
+			></a>
+		</div>
+
+		<form action="" id="triviaForm" class="form container">
+			<div class="form-amount">
+				<label for="amount">question numbers</label>
+				<input
+					type="number"
+					id="amount"
+					value="10"
+					min="1"
+					max="50"
+					autocomplete="off"
+				/>
+			</div>
+
+			<div class="form-category">
+				<label for="category">category</label>
+				<select name="category" id="category">
+					<option value="0">any category</option>
+					<option value="9">general knowledge</option>
+					<option value="10">entertainment: books</option>
+					<option value="11">entertainment: film</option>
+					<option value="12">entertainment: music</option>
+					<option value="13">entertainment: musicals and theatres</option>
+					<option value="14">entertainment: television</option>
+					<option value="15">entertainment: video games</option>
+					<option value="16">entertainment: board games</option>
+					<option value="29">entertainment: comics</option>
+					<option value="31">entertainment: anime && manga</option>
+					<option value="32">entertainment: cartoon && animation</option>
+					<option value="17">science && nature</option>
+					<option value="18">science: computers</option>
+					<option value="19">science: mathematics</option>
+					<option value="30">science: gadgets</option>
+					<option value="20">mythology</option>
+					<option value="21">sports</option>
+					<option value="22">geography</option>
+					<option value="23">history</option>
+					<option value="24">politics</option>
+					<option value="25">art</option>
+					<option value="26">celebrities</option>
+					<option value="27">animals</option>
+					<option value="28">vehicles</option>
+				</select>
+			</div>
+
+			<div class="form-difficulty">
+				<label for="difficulty">difficulty</label>
+				<select name="" id="difficulty">
+					<option value="0">any difficulty</option>
+					<option value="easy">easy</option>
+					<option value="medium">medium</option>
+					<option value="hard">hard</option>
+				</select>
+			</div>
+
+			<div class="form-type">
+				<label for="type">type</label>
+				<select name="" id="type">
+					<option value="0">any type</option>
+					<option value="boolean">true/false</option>
+					<option value="multiple">multiple choice</option>
+				</select>
+			</div>
+
+			<p class="center-content">
+				<input
+					onclick=" location.href='./trivia.html' "
+					class="submit"
+					type="submit"
+					value="play"
+					id="formButton"
+				/>
+			</p>
+		</form>
+
+		<script src="./js/form.js"></script>
+	</body>
+</html>

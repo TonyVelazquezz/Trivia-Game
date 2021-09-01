@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Trivia</title>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/end.css" />
+		<link rel="stylesheet" href="./css/responsive.css" />
+	</head>
+	<body>
+		<div class="container center-content">
+			<div class="final-score">
+				<h2 class="final-score-text">Your Final Score</h2>
+				<h1 class="final-score-number">0</h1>
+				<form>
+					<input class="user-name" type="text" name="username" placeholder="Username" />
+					<p class="center-content">
+						<button
+							class="btn"
+							type="submit"
+							id="save-button"
+							onclick = 'saveHighScore(event)'
+							disabled
+						/>save</button>
+					</p>
+				</form>
+				<p class="center-content">
+					<button
+						class="btn"
+						onclick=" location.href='./trivia.html' "
+					/>play again</button>
+				</p>
+				
+				<p class="center-content">
+					<button
+						class="btn"
+						onclick=" location.href='./Index.html' "
+					/>home</button>
+				</p>
+				
+			</div>
+		</div>
+
+		<script src="./js/end.js"></script>
+	</body>
+</html>

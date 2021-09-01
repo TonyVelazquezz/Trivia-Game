@@ -1,0 +1,44 @@
+.final-score {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100vh;
+}
+.final-score .final-score-text {
+	text-transform: capitalize;
+}
+.final-score .final-score-number {
+	font-size: 5rem;
+	color: var(--white);
+	text-shadow: var(--textShadow);
+}
+.user-name {
+	width: 40%;
+	margin: 1rem 0;
+	padding: 1rem;
+	font-size: 2rem;
+	text-align: center;
+	border-radius: 0.2rem;
+	border: none;
+	outline: none;
+}
+.btn {
+	width: 40%;
+	background-color: var(--secondary);
+	margin: 1rem 0;
+	padding: 0.5rem;
+	border: none;
+	font-family: var(--mainFont);
+	font-size: 2.5rem;
+	border-radius: 0.3rem;
+	font-weight: 500;
+	color: var(--primaryDark);
+	transition: all 0.4s ease;
+	text-transform: capitalize;
+}
+.btn:hover {
+	background-color: var(--secondaryDark);
+	color: var(--white);
+	cursor: pointer;
+	transform: scale(1.15);
+}
