@@ -1,6 +1,5 @@
 let mainForm = document.getElementById('triviaForm');
 
-//Funciones
 const formData = event => {
 	event.preventDefault();
 	let difficulty = document.getElementById('difficulty').value;
@@ -14,5 +13,4 @@ const formData = event => {
 	localStorage.setItem('category', category);
 };
 
-//Eventos;
 mainForm.onsubmit = formData;
