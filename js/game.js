@@ -23,7 +23,7 @@ let acceptAnswers = false;
 let score = 0;
 
 let questionCounter = 0;
-let availableQuestion = [];
+let availableQuestions = [];
 
 const bonus = 10;
 const maxQuestions = amount;
@@ -35,13 +35,19 @@ let questions = [];
 
 const API = `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=${type}&encode=base64`;
 
-fetch(API)
-	.then(response => response.json())
-	.then(result => fillQuestions(result))
-	.catch(err => console.log(err));
+const APICall = async () => {
+	try {
+		const response = await fetch(API);
+		const { results } = await response.json();
+		fillQuestions(results);
+	} catch (error) {
+		console.log(error);
+	}
+};
+APICall();
 
 const fillQuestions = questionsAPI => {
-	questions = questionsAPI.results.map(questionAPI => {
+	questions = questionsAPI.map(questionAPI => {
 		const decodedQuestions = {
 			question: b64toUTF8(questionAPI.question),
 		};
@@ -62,14 +68,14 @@ const fillQuestions = questionsAPI => {
 startTrivia = () => {
 	questionCounter = 0;
 	score = 0;
-	availableQuestion = [...questions];
+	availableQuestions = [...questions];
 	triviaContainer.classList.remove('hidden');
 	loader.classList.add('hidden');
 	getNewQuestion();
 };
 
 getNewQuestion = () => {
-	if (availableQuestion.length === 0 || questionCounter >= maxQuestions) {
+	if (availableQuestions.length === 0 || questionCounter >= maxQuestions) {
 		localStorage.setItem('score', score);
 		return window.location.assign('/end-page.html');
 	}
@@ -77,8 +83,8 @@ getNewQuestion = () => {
 	questionCounter++;
 	questionNumber.innerText = `${questionCounter}/${maxQuestions}`;
 
-	const questionIndex = Math.floor(Math.random() * availableQuestion.length);
-	currentQuestion = availableQuestion[questionIndex];
+	const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+	currentQuestion = availableQuestions[questionIndex];
 	question.innerText = currentQuestion.question;
 
 	if (
@@ -99,7 +105,7 @@ getNewQuestion = () => {
 		answer.innerText = currentQuestion[`answer${number}`];
 	});
 
-	availableQuestion.splice(questionIndex, 1);
+	availableQuestions.splice(questionIndex, 1);
 	acceptAnswers = true;
 };
 
@@ -136,4 +142,4 @@ const incrementPercent = increment => {
 	progressPercentage.innerText = `${Math.round(percent)}%`;
 };
 
-const b64toUTF8 = str => decodeURIComponent(escape(window.atob(str)));
+const b64toUTF8 = str => decodeURIComponent(window.atob(str));
